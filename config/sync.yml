@@ -1,13 +1,13 @@
 # Faye
-#development:
-#  server: "http://localhost:9292/faye"
-#  adapter_javascript_url: "http://localhost:9292/faye/faye.js"
-#  auth_token: slkfjlakjf203902320sf
-#  adapter: "Faye"
-#  async: true
+development:
+  server: "http://localhost:9292/faye"
+  adapter_javascript_url: "http://localhost:9292/faye/faye.js"
+  auth_token: slkfjlakjf203902320sf
+  adapter: "Faye"
+  async: true
 
 # Pusher
- development:
+ production:
    adapter_javascript_url: "http://js.pusher.com/2.0/pusher.min.js"
    app_id: <%= ENV["PUSHER_APP_ID"] %>
    api_key: <%= ENV["PUSHER_KEY"] %>
@@ -19,12 +19,12 @@
 # development:
 #   adapter: false
 
-#test:
-#  server: "http://localhost:9292/faye"
-#  adapter_javascript_url: "http://localhost:9292/faye/faye.js"
-#  adapter: "Faye"
-#  auth_token: "secret"
-#  async: false
+test:
+  server: "http://localhost:9292/faye"
+  adapter_javascript_url: "http://localhost:9292/faye/faye.js"
+  adapter: "Faye"
+  auth_token: "secret"
+  async: false
 
 #production:
 #  server: "https://zerowebsockets.herokuapp.com/faye"
