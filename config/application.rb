@@ -1,11 +1,17 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'pusher'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Pusher.url = "https://1bc1e4c79dda93dd62ef:2ad764aecda78ff9ec2c@api.pusherapp.com/apps/158436"
+
+Pusher.trigger('test_channel', 'my_event', {
+  message: 'hello world'
+})
 module Websocket
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
