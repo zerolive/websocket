@@ -6,6 +6,19 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag Sync.adapter_javascript_url %>
   <%= csrf_meta_tags %>
+  <script src="//js.pusher.com/2.2/pusher.min.js"></script>
+	<script>
+	// If your Heroku application is within the EU region,
+	// uncomment the followling lines
+	Pusher.host = 'ws-eu.pusher.com';
+	Pusher.sockjs_host = 'sockjs-eu.pusher.com';
+
+	var pusher = new Pusher('<%= ENV["PUSHER_APP_ID"] %>'); // uses your APP KEY
+	var channel = pusher.subscribe('test_channel');
+	channel.bind('greet', function(data) {
+	  alert(data.greeting);
+	});
+</script>
 </head>
 <body>
 
