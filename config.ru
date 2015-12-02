@@ -2,10 +2,10 @@
 require 'faye'
 
 require ::File.expand_path('../config/environment', __FILE__)
-run Rails.application
 
 
 Faye::WebSocket.load_adapter('thin')
 app = Faye::RackAdapter.new(:mount => '/faye', :timeout => 45)
 
+run Rails.application
 run app
