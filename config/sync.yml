@@ -7,13 +7,13 @@ development:
   async: true
 
 # Pusher
-production:
-  adapter_javascript_url: "http://js.pusher.com/2.0/pusher.min.js"
-  app_id: <%= ENV["PUSHER_APP_ID"] %>
-  api_key: <%= ENV["PUSHER_KEY"] %>
-  auth_token: <%= ENV["PUSHER_SECRET"] %>
-  adapter: "Pusher"
-  async: true
+#production:
+#  adapter_javascript_url: "http://js.pusher.com/2.0/pusher.min.js"
+#  app_id: <%= ENV["PUSHER_APP_ID"] %>
+#  api_key: <%= ENV["PUSHER_KEY"] %>
+#  auth_token: <%= ENV["PUSHER_SECRET"] %>
+#  adapter: "Pusher"
+#  async: true
 
 # Disabled
 # development:
@@ -26,9 +26,9 @@ test:
   auth_token: "secret"
   async: false
 
-#production:
-#  server: "https://zerowebsockets.herokuapp.com/faye"
-#  adapter_javascript_url: "http://zerowebsockets.herokuapp.com:9292/faye/faye.js"
-#  adapter: "Faye"
-#  auth_token: "0c59cf7177d0339ad8952005d2f61411a9fd60df889324430f1e283c533d9b12"
-#  async: true
+production:
+  server: "https://localhost:9292/faye"
+  adapter_javascript_url: "http://localhost:9292/faye/faye.js"
+  adapter: "Faye"
+  auth_token: "0c59cf7177d0339ad8952005d2f61411a9fd60df889324430f1e283c533d9b12"
+  async: true
