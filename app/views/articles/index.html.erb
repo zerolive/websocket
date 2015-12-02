@@ -2,4 +2,8 @@
 
 <hr>
 
-<%= render @articles %>
+<% @articles.each do |article| %>
+	<%= sync partial: 'article', resource: article %>
+<% end %>
+
+<%= sync_new partial: 'article', resource: Article.new %>
